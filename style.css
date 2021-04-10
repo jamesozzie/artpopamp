@@ -1,0 +1,16 @@
+/*
+Theme Name:   ArtpopAMP
+Description:  Adds full AMP compatibility for the Artpop theme
+Author:       James Osborne
+Author URL:   Write here the author's blog or website url
+Template:     artpop
+Version:      1.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  ArtpopAMP
+*/
+
+/* Write here your own personal stylesheet */
+.mobile-navigation .mobile-menu li.is-closed > ul {
+    display: none;
+}
