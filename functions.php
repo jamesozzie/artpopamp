@@ -43,7 +43,7 @@ add_action( 'wp_enqueue_scripts', function() {
 
 function artpop_add_sub_menu_toggles_amp( $output, $item, $depth, $args ) {
 	if ( isset( $args->show_sub_menu_toggles ) && $args->show_sub_menu_toggles && in_array( 'menu-item-has-children', $item->classes, true ) ) {
- 		$output = '<li data-amp-bind-class="visible2 ? \'is-open\' : \'is-closed\'" class="menu-item-has-children"><div class="menu-item-wrapper">'.  $output . '<button on="tap:AMP.setState({visible2: !visible2})" class="sub-menu-toggle" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'artpop' ) . '</span>' . artpop_get_svg( array( 'icon' => 'chevron-down' )  ) . '</button></div>';
+ 		$output = '<li data-amp-bind-class="visible' . $item->ID . ' ? \'is-open\' : \'is-closed\'" class="menu-item-has-children"><div class="menu-item-wrapper">'.  $output . '<button on="tap:AMP.setState({visible' . $item->ID . ': !visible' . $item->ID . '})" class="sub-menu-toggle" aria-expanded="false"><span class="screen-reader-text">' . __( 'Show sub menu', 'artpop' ) . '</span>' . artpop_get_svg( array( 'icon' => 'chevron-down' )  ) . '</button></div>';
 	}
 	return $output;
 	$output .= $indent . '<li data-content="'.$item->title.'"  id="nav-menu-item-' . $item->ID . '" class="' . $depth_class_names . ' ' . $class_names . '">';
